@@ -1,0 +1,60 @@
+
+                
+<Pop@FloatLayout>:
+    Button
+        pos_hint:{"center_x":.5,"center_y":.5}
+        background_color:0,0,0,.7
+        on_press:root.pos_hint={"center_x":.5,"y":1}
+    Button
+        size_hint:.58,.6
+        pos_hint:{"center_x":.5,"center_y":.5}
+        background_color:0,0,0,.7
+    FloatLayout
+        size_hint:.58,.6
+        pos_hint:{"center_x":.5,"center_y":.5}
+        orientation:"vertical"
+        canvas.before:
+            Color:
+                rgba:0,0,0,1
+            Rectangle
+                size:self.size
+                pos:self.pos
+        canvas.after:
+            Color:
+                rgba:0,1,1,1
+            Rectangle
+                size:self.size
+                pos:self.pos
+                source:"img/frame.png"
+<Ml>:
+    FloatLayout
+        canvas:
+            Color:
+                rgba:1,1,1,.2
+            Rectangle:
+                size:self.size
+                pos:self.pos
+                source:"img/01.jpg"
+    
+    FloatLayout:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        Dash:
+            id:dash
+    Pop
+        pos_hint:{"center_x":.5,"y":1}
+        id:pop
+    BoxLayout:
+        size_hint:1,.1
+        Label
+        BoxLayout
+            size_hint:.3,1
+            BtnCavian:
+                text:"Preview"
+                font_size:self.height/2
+                on_press:root.down_display()
+                
+            BtnCavian:
+                text:"Next"
+                font_size:self.height/2
+                on_press:root.up_display()
+                

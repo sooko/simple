@@ -1,0 +1,234 @@
+<ChartRpm>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:3
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:False
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:15
+    tick_color: (1,1,1,1)
+    label_options: {'color': (1,0,0,1)}
+    border_color:0,0,0,0
+    # MeshLinePlot:
+    # MeshLinePlot
+
+<ChartTps>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:10
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:True
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:100
+    tick_color: (1,1,1,1)
+    label_options: {'color': (0,1,0,1)}
+    border_color:0,0,0,0
+<ChartIat>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:6
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:False
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:60
+    tick_color: (1,1,1,1)
+    label_options: {'color': (0,0,1,1)}
+    border_color:0,0,0,0
+<ChartMap>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:12
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:False
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:120
+    tick_color: (1,1,1,1)
+    label_options: {'color': (1,1,0,1)}
+    border_color:0,0,0,0
+<ChartBat>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:3
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:False
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:15
+    tick_color: (1,1,1,1)
+    label_options: {'color': (1,0,1,1)}
+    border_color:0,0,0,0
+<ChartInj>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:1
+    y_grid_label:True
+    x_grid_label:True
+    x_grid:False
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:10
+    tick_color: (1,1,1,1)
+    label_options: {'color': (0,1,1,1)}
+    border_color:0,0,0,0
+<ChartAdv>:
+    x_ticks_minor:0
+    x_ticks_major:0
+    y_ticks_major:6
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:False
+    y_grid:True
+    xmin:0
+    xmax:0
+    ymin:0
+    ymax:60
+    tick_color: (1,1,1,1)
+    label_options: {'color': (1,1,1,1)}
+    border_color:0,0,0,0
+
+
+
+
+
+<Chart>:
+    x_ticks_minor:1
+    x_ticks_major:1
+    y_ticks_major:1
+    y_grid_label:True
+    x_grid_label:False
+    x_grid:True
+    y_grid:True
+    xmin:0
+    xmax:10
+    ymin:0
+    ymax:10
+    tick_color: (1,1,1,.8)
+    label_options: {'color': (0,0,0,0)}
+
+
+<Grafik>:
+    BoxLayout:
+        BoxLayout
+            BoxLayout:
+                id:ylabel
+                size_hint:None,1
+                width:self.minimum_width
+            Chart
+        BoxLayout:
+            size_hint:.15,1
+            orientation:"vertical"
+            BoxLayout:
+                LabelConsola:
+                    text:"rpm"
+                    color:1,0,0,1
+                CheckBox:
+                    data:"rpm"
+                    on_state:
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+            BoxLayout:
+                LabelConsola:
+                    color:0,1,0,1
+                    text:"tps"
+                CheckBox
+                    data:"tps"
+                    on_state:
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+            BoxLayout:
+                LabelConsola:
+                    color:0,0,1,1
+                    text:"iat"
+                CheckBox
+                    data:"iat"
+                    on_state:
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+            BoxLayout:
+                LabelConsola:
+                    color:1,1,0,1
+                    text:"map"
+                CheckBox
+                    data:"map"
+                    on_state:
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+            BoxLayout:
+                LabelConsola:
+                    color:1,0,1,1
+                    text:"bat"
+                CheckBox
+                    data:"bat"
+                    on_state:
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+            BoxLayout:
+                LabelConsola:
+                    color:0,1,1,1
+                    text:"inj"
+                CheckBox
+                    data:"inj"
+                    on_state:
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+            BoxLayout:
+                LabelConsola:
+                    text:"adv"
+                CheckBox
+                    data:"adv"
+                    on_state:
+
+                        root.add(self.data) if self.state=="down" else root.remove(self.data)
+                    
+            Spinner:
+                text:"times"
+                values:["100ms","200ms"]
+                font_name:"fonts/consola.ttf"
+                background_color:1,1,1,.3
+            # Label
+    
+<Label>:
+    markup:True
+<Xline@Label>:
+    tebal:"2sp"
+    size_hint:None,1
+    width:root.tebal
+    warna:1,1,1,1
+    canvas:
+        Color:
+            rgba:root.warna
+        Rectangle:
+            size:self.size
+            pos:self.pos
+<Yline@Label>:
+    tebal:"2sp"
+    size_hint:1,None
+    height:root.tebal
+    warna:1,1,1,1
+    canvas:
+        Color:
+            rgba:root.warna
+        Rectangle:
+            size:self.size
+            pos:self.pos
+
+    
+    
+    
+        
+        
